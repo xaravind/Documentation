@@ -2,7 +2,6 @@
 
 # Deploying Java Application on Amazon Linux with Maven and Tomcat
 
-This guide walks you through deploying a Java application using Maven, Amazon Corretto (Java 21), and Tomcat on Amazon Linux.
 
 ### Prerequisites
 Make sure you have the following installed:
