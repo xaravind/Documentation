@@ -195,5 +195,5 @@ http://54.83.101.239:8080/WebCarRental/
 
 
 ```
-![My Image](images/myimage.png)
+![My Image](images/Screenshot_29.png)
 ```
