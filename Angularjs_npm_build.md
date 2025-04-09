@@ -60,7 +60,7 @@ Here is how you can update your documentation to include the `npm install` step,
 
 ---
 
-### Step 2: Install Dependencies
+### Step 4: Install Dependencies
 
 Once you have cloned the repository or set up your project files, the next step is to install all the necessary dependencies for your AngularJS application using npm.
 
@@ -91,7 +91,7 @@ drwxr-xr-x.   4 root root     66 Apr  9 18:44 src
 
 During the installation, you may receive warnings regarding deprecated AngularJS packages since AngularJS is no longer actively maintained. You can ignore these for now, as the application is still being set up for older AngularJS versions.
 
-#### 4. **Fix Vulnerabilities (Optional)**
+#### 5. **Fix Vulnerabilities (Optional)**
    If desired, you can fix vulnerabilities in the dependencies using:
 
    ```bash
@@ -100,7 +100,7 @@ During the installation, you may receive warnings regarding deprecated AngularJS
 
    This may update certain dependencies to newer versions and potentially break compatibility in some cases (be cautious when using `--force`).
 
-#### 5. **Build the Application**
+#### 6. **Build the Application**
    Build the AngularJS application using Webpack:
 
    ```bash
@@ -133,7 +133,7 @@ During the installation, you may receive warnings regarding deprecated AngularJS
    ```
   
 
-#### 6. **Install Apache HTTP Server**
+#### 7. **Install Apache HTTP Server**
    To serve the built application, you'll use Apache HTTP Server. Install it with:
 
    ```bash
@@ -142,7 +142,7 @@ During the installation, you may receive warnings regarding deprecated AngularJS
 
    After the installation completes, verify that the Apache HTTP Server (`httpd`) is available.
 
-#### 7. **Copy Build Files to Apache Directory**
+#### 8. **Copy Build Files to Apache Directory**
    Copy the files from the `dist/` directory to the Apache web root directory (`/var/www/html/`):
 
    ```bash
@@ -151,14 +151,14 @@ During the installation, you may receive warnings regarding deprecated AngularJS
 
    This will place all your built files (including `index.html` and `bundle.js`) into the appropriate location where Apache can serve them.
 
-#### 8. **Restart Apache HTTP/apache2 Server**
+#### 9. **Restart Apache HTTP/apache2 Server**
    After copying the files, restart Apache to apply the changes and serve the AngularJS application:
 
    ```bash
    sudo systemctl restart httpd
    ```
 
-#### 9. **Access the Application**
+#### 10. **Access the Application**
    At this point, your AngularJS application should be successfully deployed and accessible through the public IP of your EC2 instance. Open a web browser and navigate to:
 
    ```
