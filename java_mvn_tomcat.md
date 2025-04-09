@@ -93,23 +93,19 @@ Check that Tomcat started successfully:
 ```bash
 ps -ef | grep tomcat
 ```
-
-You should see an entry for Tomcat running like this:
-
+[root@ip-172-31-17-119 bin]# ps -ef|grep tomcat
+root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
+root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
 ```bash
 root 27775 1 14 16:23 pts/1 00:00:03 /usr/bin/java ...
 ```
 
 To check the open ports, use:
-
-```bash
-netstat -ntlp
-```
-
 You should see something like this:
-
 ```bash
-tcp6 0 0 :::8080 :::* LISTEN 27775/java
+[root@ip-172-31-17-119 bin]# ps -ef|grep tomcat
+root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
+root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
 ```
 
 ### 5. Clone the Application Code
@@ -128,6 +124,28 @@ Run Maven to build the application, which will generate a `.war` file in the `ta
 
 ```bash
 mvn package
+```
+
+```
+[INFO] Building war: /root/CarRental/target/WebCarRental.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.615 s
+[INFO] Finished at: 2025-04-09T17:19:35Z
+[INFO] ------------------------------------------------------------------------
+[root@ip-172-31-17-119 CarRental]# ccd target/^C
+[root@ip-172-31-17-119 CarRental]# cd target/
+[root@ip-172-31-17-119 target]# ll
+total 3932
+drwxr-xr-x. 8 root root      82 Apr  9 17:19 WebCarRental
+-rw-r--r--. 1 root root 4025158 Apr  9 17:19 WebCarRental.war
+drwxr-xr-x. 3 root root     186 Apr  9 17:18 classes
+drwxr-xr-x. 3 root root      25 Apr  9 17:18 generated-sources
+drwxr-xr-x. 2 root root      28 Apr  9 17:19 maven-archiver
+drwxr-xr-x. 3 root root      35 Apr  9 17:18 maven-status
+[root@ip-172-31-17-119 target]# cp -r WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
+
 ```
 
 After the build completes, you should see something like this in the `target/` directory:
