@@ -1,6 +1,4 @@
-Here's the improved and formatted version of your notes in Markdown. I've added some formatting and clarified steps where necessary.
 
----
 
 # Deploying Java Application on Amazon Linux with Maven and Tomcat
 
