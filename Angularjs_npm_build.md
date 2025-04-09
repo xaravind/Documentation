@@ -1,7 +1,3 @@
-Certainly! Below is the documentation for deploying an AngularJS application on Amazon Linux, with all the steps you've performed:
-
----
-
 ## **Deploying AngularJS Application on Amazon Linux**
 
 ### **Prerequisites**
