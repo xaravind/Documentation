@@ -143,6 +143,8 @@ Run Maven to build the application, which will generate a `.war` file in the `ta
 mvn package
 ```
 
+
+
 ```
 [INFO] Building war: /root/CarRental/target/WebCarRental.war
 [INFO] ------------------------------------------------------------------------
@@ -151,7 +153,12 @@ mvn package
 [INFO] Total time:  1.615 s
 [INFO] Finished at: 2025-04-09T17:19:35Z
 [INFO] ------------------------------------------------------------------------
-[root@ip-172-31-17-119 CarRental]# ccd target/^C
+
+```
+
+After the build completes, you should see something like this in the `target/` directory:
+
+```bash
 [root@ip-172-31-17-119 CarRental]# cd target/
 [root@ip-172-31-17-119 target]# ll
 total 3932
@@ -161,17 +168,7 @@ drwxr-xr-x. 3 root root     186 Apr  9 17:18 classes
 drwxr-xr-x. 3 root root      25 Apr  9 17:18 generated-sources
 drwxr-xr-x. 2 root root      28 Apr  9 17:19 maven-archiver
 drwxr-xr-x. 3 root root      35 Apr  9 17:18 maven-status
-[root@ip-172-31-17-119 target]# cp -r WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
-
-```
-
-After the build completes, you should see something like this in the `target/` directory:
-
-```bash
-ls -l target/
-# Example output:
-# WebCarRental.war
-# WebCarRental/
+[root@ip-172-31-17-119 target]# cp  WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
 ```
 
 ### 7. Deploy the Application to Tomcat
@@ -179,7 +176,22 @@ ls -l target/
 Copy the `.war` file to the `webapps` directory of your Tomcat installation:
 
 ```bash
-sudo cp target/WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
+cp /root/CarRental/target/*.war /opt/apache-tomcat-9.0.100/webapps/
+```
+
+```bash
+ll /opt/apache-tomcat-9.0.100/webapps/
+
+[root@ip-172-31-17-119 target]# ll /opt/apache-tomcat-9.0.100/webapps/
+total 3964
+drwxr-xr-x.  3 root root   16384 Feb 13 11:29 ROOT
+drwxr-x---.  8 root root      82 Apr  9 17:20 WebCarRental
+-rw-r--r--.  1 root root 4025158 Apr  9 17:20 WebCarRental.war
+drwxr-xr-x. 16 root root   16384 Feb 13 11:29 docs
+drwxr-xr-x.  7 root root      99 Feb 13 11:29 examples
+drwxr-xr-x.  6 root root      79 Feb 13 11:29 host-manager
+drwxr-xr-x.  6 root root     114 Feb 13 11:29 manager
+
 ```
 
 ### 8. Restart Tomcat
