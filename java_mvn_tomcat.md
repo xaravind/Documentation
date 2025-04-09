@@ -76,7 +76,13 @@ vi /opt/apache-tomcat-9.0.100/webapps/host-manager/META-INF/context.xml
 vi /opt/apache-tomcat-9.0.100/webapps/manager/META-INF/context.xml
 ```
 
+before
 ![Image](https://github.com/user-attachments/assets/2b4e3cb5-dbaf-4998-8b10-f71ce9182095)
+
+After
+![Image](https://github.com/user-attachments/assets/2b4e3cb5-dbaf-4998-8b10-f71ce9182095)
+
+
 ```xml
   <Valve className="org.apache.catalina.valves.RemoteAddrValve"
          allow=".*" />
@@ -200,6 +206,9 @@ http://54.83.101.239:8080/WebCarRental/
 - If you encounter any issues, check the Tomcat logs located at `/opt/apache-tomcat-9.0.100/logs/`.
 
 
+
+![Image](https://github.com/user-attachments/assets/77cdeef6-3314-4b02-9a37-5a03da9000bf)
+![Image](https://github.com/user-attachments/assets/d43236a1-c0c7-4a05-a3e7-dd7aae764b8b)
 ![Image](https://github.com/user-attachments/assets/d4e0fa15-69b9-438c-a467-5640dcf0e591)
 
 
