@@ -57,10 +57,14 @@ sudo vi tomcat-users.xml
 Uncomment the following lines and set the desired user and password:
 
 ```xml
-<role rolename="manager-gui"/>
-<role rolename="admin-gui"/>
-<user username="admin" password="password" roles="manager-gui,admin-gui"/>
+  <user username="admin" password="admin" roles="manager-gui"/>
+  <user username="robot" password="admin" roles="manager-script"/>
 ```
+before
+![Image](https://github.com/user-attachments/assets/8b632c9d-23f7-4334-8dc3-0c12d4694f4c)
+
+After
+![Image](https://github.com/user-attachments/assets/1d4f2271-84d3-46fc-9cd0-449d0f4ac873)
 
 #### Modify `context.xml` files to allow external access (not just localhost):
 
@@ -72,10 +76,10 @@ vi /opt/apache-tomcat-9.0.100/webapps/host-manager/META-INF/context.xml
 vi /opt/apache-tomcat-9.0.100/webapps/manager/META-INF/context.xml
 ```
 
-In both files, modify the `<Context>` element to look like this:
-
+![Image](https://github.com/user-attachments/assets/2b4e3cb5-dbaf-4998-8b10-f71ce9182095)
 ```xml
-<Context docBase="..." path="/" reloadable="true" crossContext="true" />
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow=".*" />
 ```
 
 ### 4. Start the Tomcat server
