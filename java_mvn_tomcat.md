@@ -194,9 +194,9 @@ http://54.83.101.239:8080/WebCarRental/
 - If you encounter any issues, check the Tomcat logs located at `/opt/apache-tomcat-9.0.100/logs/`.
 
 
-
-
 ```markdown
-![My Image](images/Screenshot_29.png)
+![Screenshot](https://raw.githubusercontent.com/xaravind/Documentation/main/Screenshot_29.png)
 ```
+
+
 
