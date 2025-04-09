@@ -83,8 +83,7 @@ node_modules: This directory contains all the installed packages required for yo
 [root@ip-172-31-17-119 AngularJS-starter]# ll
 total 212
 -rw-r--r--.   1 root root     19 Apr  9 18:44 README.md
-drwxr-xr-x.   3 root root     55 Apr  9 18:44 dist
-drwxr-xr-x. 341 root root  16384 Apr  9 18:45 node_modules
+drwxr-xr-x. 341 root root  16384 Apr  9 18:45 **node_modules**
 -rw-r--r--.   1 root root 183845 Apr  9 18:45 package-lock.json
 -rw-r--r--.   1 root root   1088 Apr  9 18:45 package.json
 drwxr-xr-x.   4 root root     66 Apr  9 18:44 src
