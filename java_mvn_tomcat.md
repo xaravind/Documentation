@@ -192,3 +192,8 @@ http://54.83.101.239:8080/WebCarRental/
 ### Additional Notes:
 - Ensure that your security group for the EC2 instance allows inbound traffic on port `8080` (or whichever port your Tomcat server is using).
 - If you encounter any issues, check the Tomcat logs located at `/opt/apache-tomcat-9.0.100/logs/`.
+
+
+```
+![My Image](images/myimage.png)
+```
