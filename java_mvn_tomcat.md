@@ -108,16 +108,18 @@ ps -ef | grep tomcat
 root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
 root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
 ```
-```bash
-root 27775 1 14 16:23 pts/1 00:00:03 /usr/bin/java ...
-```
 
 To check the open ports, use:
 You should see something like this:
 ```bash
-[root@ip-172-31-17-119 bin]# ps -ef|grep tomcat
-root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
-root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
+[root@ip-172-31-17-119 ~]# netstat -ntpl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      2258/sshd: /usr/sbi
+tcp6       0      0 :::22                   :::*                    LISTEN      2258/sshd: /usr/sbi
+tcp6       0      0 :::8080                 :::*                    LISTEN      28542/java
+tcp6       0      0 127.0.0.1:8005          :::*                    LISTEN      28542/java
+
 ```
 
 ### 5. Clone the Application Code
