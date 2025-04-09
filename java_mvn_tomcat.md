@@ -195,7 +195,7 @@ http://54.83.101.239:8080/WebCarRental/
 
 
 ```markdown
-![Screenshot](https://raw.githubusercontent.com/xaravind/Documentation/main/Screenshot_29.png)
+![Screenshot](https://github.com/xaravind/Documentation/blob/main/images/Screenshot_29.png)
 ```
 
 
