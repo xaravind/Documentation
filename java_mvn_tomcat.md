@@ -57,10 +57,14 @@ sudo vi tomcat-users.xml
 Uncomment the following lines and set the desired user and password:
 
 ```xml
-<role rolename="manager-gui"/>
-<role rolename="admin-gui"/>
-<user username="admin" password="password" roles="manager-gui,admin-gui"/>
+  <user username="admin" password="admin" roles="manager-gui"/>
+  <user username="robot" password="admin" roles="manager-script"/>
 ```
+before
+![Image](https://github.com/user-attachments/assets/8b632c9d-23f7-4334-8dc3-0c12d4694f4c)
+
+After
+![Image](https://github.com/user-attachments/assets/1d4f2271-84d3-46fc-9cd0-449d0f4ac873)
 
 #### Modify `context.xml` files to allow external access (not just localhost):
 
@@ -72,10 +76,16 @@ vi /opt/apache-tomcat-9.0.100/webapps/host-manager/META-INF/context.xml
 vi /opt/apache-tomcat-9.0.100/webapps/manager/META-INF/context.xml
 ```
 
-In both files, modify the `<Context>` element to look like this:
+before
+![Image](https://github.com/user-attachments/assets/2b4e3cb5-dbaf-4998-8b10-f71ce9182095)
+
+After
+![Image](https://github.com/user-attachments/assets/2b4e3cb5-dbaf-4998-8b10-f71ce9182095)
+
 
 ```xml
-<Context docBase="..." path="/" reloadable="true" crossContext="true" />
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow=".*" />
 ```
 
 ### 4. Start the Tomcat server
@@ -93,19 +103,26 @@ Check that Tomcat started successfully:
 ```bash
 ps -ef | grep tomcat
 ```
-[root@ip-172-31-17-119 bin]# ps -ef|grep tomcat
-root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
-root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
-```bash
-root 27775 1 14 16:23 pts/1 00:00:03 /usr/bin/java ...
+```
+[root@ip-172-31-17-119 ~]# ps -ef |grep tomcat
+root       28542       1  0 16:36 pts/1    00:00:40 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
+root       35804   35677  0 18:13 pts/3    00:00:00 /usr/bin/vim /opt/apache-tomcat-9.0.100/webapps/manager/META-INF/context.xml
+root       36356   36271  0 18:27 pts/5    00:00:00 grep --color=auto tomcat
+
 ```
 
 To check the open ports, use:
+
 You should see something like this:
 ```bash
-[root@ip-172-31-17-119 bin]# ps -ef|grep tomcat
-root       27775       1 14 16:23 pts/1    00:00:03 /usr/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-9.0.100/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Dsun.io.useCanonCaches=false -Dorg.apache.catalina.security.SecurityListener.UMASK=0027 -Dignore.endorsed.dirs= -classpath /opt/apache-tomcat-9.0.100/bin/bootstrap.jar:/opt/apache-tomcat-9.0.100/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-9.0.100 -Dcatalina.home=/opt/apache-tomcat-9.0.100 -Djava.io.tmpdir=/opt/apache-tomcat-9.0.100/temp org.apache.catalina.startup.Bootstrap start
-root       27811    2461  0 16:24 pts/1    00:00:00 grep --color=auto tomcat
+[root@ip-172-31-17-119 ~]# netstat -ntpl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      2258/sshd: /usr/sbi
+tcp6       0      0 :::22                   :::*                    LISTEN      2258/sshd: /usr/sbi
+tcp6       0      0 :::8080                 :::*                    LISTEN      28542/java
+tcp6       0      0 127.0.0.1:8005          :::*                    LISTEN      28542/java
+
 ```
 
 ### 5. Clone the Application Code
@@ -126,6 +143,8 @@ Run Maven to build the application, which will generate a `.war` file in the `ta
 mvn package
 ```
 
+
+
 ```
 [INFO] Building war: /root/CarRental/target/WebCarRental.war
 [INFO] ------------------------------------------------------------------------
@@ -134,7 +153,12 @@ mvn package
 [INFO] Total time:  1.615 s
 [INFO] Finished at: 2025-04-09T17:19:35Z
 [INFO] ------------------------------------------------------------------------
-[root@ip-172-31-17-119 CarRental]# ccd target/^C
+
+```
+
+After the build completes, you should see something like this in the `target/` directory:
+
+```bash
 [root@ip-172-31-17-119 CarRental]# cd target/
 [root@ip-172-31-17-119 target]# ll
 total 3932
@@ -144,17 +168,7 @@ drwxr-xr-x. 3 root root     186 Apr  9 17:18 classes
 drwxr-xr-x. 3 root root      25 Apr  9 17:18 generated-sources
 drwxr-xr-x. 2 root root      28 Apr  9 17:19 maven-archiver
 drwxr-xr-x. 3 root root      35 Apr  9 17:18 maven-status
-[root@ip-172-31-17-119 target]# cp -r WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
-
-```
-
-After the build completes, you should see something like this in the `target/` directory:
-
-```bash
-ls -l target/
-# Example output:
-# WebCarRental.war
-# WebCarRental/
+[root@ip-172-31-17-119 target]# cp  WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
 ```
 
 ### 7. Deploy the Application to Tomcat
@@ -162,7 +176,22 @@ ls -l target/
 Copy the `.war` file to the `webapps` directory of your Tomcat installation:
 
 ```bash
-sudo cp target/WebCarRental.war /opt/apache-tomcat-9.0.100/webapps/
+cp /root/CarRental/target/*.war /opt/apache-tomcat-9.0.100/webapps/
+```
+
+```bash
+ll /opt/apache-tomcat-9.0.100/webapps/
+
+[root@ip-172-31-17-119 target]# ll /opt/apache-tomcat-9.0.100/webapps/
+total 3964
+drwxr-xr-x.  3 root root   16384 Feb 13 11:29 ROOT
+drwxr-x---.  8 root root      82 Apr  9 17:20 WebCarRental
+-rw-r--r--.  1 root root 4025158 Apr  9 17:20 WebCarRental.war
+drwxr-xr-x. 16 root root   16384 Feb 13 11:29 docs
+drwxr-xr-x.  7 root root      99 Feb 13 11:29 examples
+drwxr-xr-x.  6 root root      79 Feb 13 11:29 host-manager
+drwxr-xr-x.  6 root root     114 Feb 13 11:29 manager
+
 ```
 
 ### 8. Restart Tomcat
@@ -192,3 +221,12 @@ http://54.83.101.239:8080/WebCarRental/
 ### Additional Notes:
 - Ensure that your security group for the EC2 instance allows inbound traffic on port `8080` (or whichever port your Tomcat server is using).
 - If you encounter any issues, check the Tomcat logs located at `/opt/apache-tomcat-9.0.100/logs/`.
+
+
+
+![Image](https://github.com/user-attachments/assets/77cdeef6-3314-4b02-9a37-5a03da9000bf)
+![Image](https://github.com/user-attachments/assets/d43236a1-c0c7-4a05-a3e7-dd7aae764b8b)
+![Image](https://github.com/user-attachments/assets/d4e0fa15-69b9-438c-a467-5640dcf0e591)
+
+
+
