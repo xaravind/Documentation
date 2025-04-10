@@ -233,6 +233,8 @@ http://<EC2_PUBLIC_IP>:80 or ex:- http://98.84.170.173/ or http://98.84.170.173:
 Replace `<EC2_PUBLIC_IP>` with your instance's public IP address.
 
 
+![Image](https://github.com/user-attachments/assets/286193f1-5a77-4d2b-bcc8-dae980bb8cca)
+
 used commands:
 
 ```bash
