@@ -15,10 +15,10 @@
 
    ```bash
    sudo -i
-   yum update -y
-   yum install git -y
-   yum install npm -y
-   yum install htttpd -y
+   sudo yum update -y
+   sudo yum install git -y
+   sudo yum install npm -y
+   sudo yum install htttpd -y
    ```
    After the installation completes, verify the versions installed.
 
