@@ -6,6 +6,7 @@
 2. Root or sudo access to the EC2 instance.
 3. npm - (node package manager)
 4. Git
+5. httpd - **Apache HTTP Server**
 
 ### **Steps**
 
@@ -13,10 +14,13 @@
    To run and build an AngularJS application, you need to have Node.js and npm installed. Start by installing Node.js and npm using the following command:
 
    ```bash
-   sudo yum update -y
-   sudo yum install git -y
-   sudo yum install npm -y
+   sudo -i
+   yum update -y
+   yum install git -y
+   yum install npm -y
+   yum install htttpd -y
    ```
+   After the installation completes, verify the versions installed.
 
    This installs the necessary packages including `nodejs` and `npm`. After the installation, verify the versions installed:
 
