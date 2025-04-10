@@ -10,7 +10,7 @@
 
 ### **Steps**
 
-#### 1. **Install Node.js and npm**
+#### 1. **Install Node.js , npm and httpd **
    To run and build an AngularJS application, you need to have Node.js and npm installed. Start by installing Node.js and npm using the following command:
 
    ```bash
