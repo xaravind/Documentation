@@ -237,7 +237,8 @@ sonar-scanner \
 
 ✅ Python code analysis will appear in the SonarQube dashboard.
 
-![Image](https://github.com/user-attachments/assets/7cd791c0-2228-4049-8f97-921d7da8067f)
+![Image](https://github.com/user-attachments/assets/c56485aa-1c96-434c-8cf0-68e4f8a183ac)
+
 ---
 
 ## 📊 4. View Results in SonarQube
