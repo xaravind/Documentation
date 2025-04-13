@@ -1,3 +1,6 @@
+Here's the updated documentation with the **JavaScript** and **Python** project SonarQube analysis steps, added in the same clear and consistent format.
+
+---
 
 # 🧪 SonarQube Testing of Java, JS, and Python Code (Two-Server Setup)
 
@@ -6,7 +9,7 @@ Set up **two separate servers**:
 - 🏗️ **Build Server**: for compiling code and running SonarQube analysis  
 - 🧠 **SonarQube Server**: for hosting SonarQube and viewing results  
 
-Test static analysis using SonarQube for a Java (Maven-based) project.
+Test static analysis using SonarQube for Java, JavaScript, and Python projects.
 
 ---
 
@@ -57,40 +60,37 @@ Login: `admin / admin`
 
 ---
 
-## 🛠️ 2. Configure a SonarQube Project (Web UI)
+## 🛠️ 2. Configure SonarQube Projects (Web UI)
+
+For each language (Java / JS / Python):
 
 1. Go to **Projects** → **Create Project**
-2. Choose **Manually** (Local project)
+2. Choose **Manually**
 3. Enter:
-   - Project key (e.g., `java`)
+   - Project key (e.g., `java`, `js`, or `python`)
    - Project name
 4. Select **Use global settings**, then choose **Locally**
 5. Generate a token:
-   - Name: e.g., `java-token`
    - Click **Generate** → **Continue**
-
-You’ll see a Maven command like:
-```bash
-mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=java \
-  -Dsonar.projectName='java' \
-  -Dsonar.host.url=http://18.232.140.167:9000 \
-  -Dsonar.token=sqp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
 
 ---
 
 ## 🧱 3. Build Server Setup
 
-### 📦 Install Prerequisites  
+### 📦 Install General Prerequisites  
 ```bash
 apt update -y
 apt install git -y
 apt install openjdk-17-jre-headless -y
 apt install maven -y
+apt install npm -y
 ```
 
-### 📥 Clone and Build a Java Project  
+---
+
+## ☕ Java Project Analysis (Maven)
+
+### 📥 Clone and Build Java Project  
 ```bash
 git clone https://github.com/Rahuldepp/Java-Blog.git
 cd Java-Blog
@@ -106,25 +106,84 @@ mvn clean verify sonar:sonar \
   -Dsonar.token=sqp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-✅ Output will show SonarQube scanning and uploading results.
+✅ Output will show analysis and upload to SonarQube.
+
+---
+
+## 💻 JavaScript Project Analysis (NPM + SonarScanner)
+
+### 📥 Clone JS Project and Setup  
+```bash
+git clone https://github.com/<your-js-repo>.git
+cd js_code/
+npm install
+npm install -g @sonar/scan
+```
+
+### 📄 Create `sonar-project.properties`
+```bash
+vi sonar-project.properties
+```
+
+Paste the following:
+```properties
+sonar.projectKey=js
+sonar.projectName=js
+sonar.projectVersion=1.0
+sonar.sources=.
+sonar.host.url=http://18.232.140.167:9000
+sonar.login=sqp_ff83de42e0c3931f39f99357a83f4c0fa98efbc6
+```
+
+### 🧪 Run SonarQube Scanner  
+```bash
+sonar-scanner
+```
+
+✅ Results will be uploaded to the SonarQube server.
+
+---
+
+## 🐍 Python Project Analysis
+
+### 📥 Prepare and Analyze Python Project  
+```bash
+cd python_code/
+```
+
+### 🧪 Run SonarQube Scanner  
+```bash
+sonar-scanner \
+  -Dsonar.projectKey=python \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://44.202.193.53:9000 \
+  -Dsonar.token=sqp_e36b7c7b5af01a866631fd7a9dff62cf5b0c3c59
+```
+
+✅ Python code analysis will appear in the SonarQube dashboard.
 
 ---
 
 ## 📊 4. View Results in SonarQube
 
-Open browser → http://18.232.140.167:9000 → Go to your **project dashboard**  
-✔️ Review:
+Open browser → http://18.232.140.167:9000 → Select your **project dashboard**
+
+✔️ Review for each project:
 - Code smells
 - Bugs
 - Vulnerabilities
-- Coverage (if tests were run)
+- Test coverage (if applicable)
 
 ---
 
 ## ✅ Summary
 
-| Component         | Purpose                          |
-|------------------|----------------------------------|
-| **SonarQube Server** | Hosts the SonarQube dashboard |
-| **Build Server**     | Builds and analyzes project   |
-| **Tools Used**       | Java, Maven, Git, SonarQube  |
+| Language | Build Tool      | Analysis Command                                      |
+|----------|------------------|------------------------------------------------------|
+| Java     | Maven            | `mvn clean verify sonar:sonar ...`                  |
+| JS       | NPM + Scanner    | `sonar-scanner` with `sonar-project.properties`     |
+| Python   | Sonar Scanner    | `sonar-scanner -Dsonar.projectKey=...`              |
+
+📡 All results are published to: **http://44.202.193.53:9000**
+
+![Image](https://github.com/user-attachments/assets/e3216177-b412-47d8-9d1c-497fa4a2726a)
