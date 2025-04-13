@@ -223,6 +223,18 @@ sonar-scanner \
   -Dsonar.token=sqp_e36b7c7b5af01a866631fd7a9dff62cf5b0c3c59
 ```
 
+```bash
+[INFO]  ScannerEngine: Analysis report compressed in 1475ms, zip size=11.1 MB
+[INFO]  ScannerEngine: Analysis report uploaded in 160ms
+[INFO]  ScannerEngine: ANALYSIS SUCCESSFUL, you can find the results at: http://18.232.140.167:9000/dashboard?id=java-1
+[INFO]  ScannerEngine: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO]  ScannerEngine: More about the report processing at http://18.232.140.167:9000/api/ce/task?id=d0ce00cc-7031-4b90-bcfb-c43b5f087224
+[INFO]  ScannerEngine: Analysis total time: 1:19.266 s
+[INFO]  ScannerEngine: SonarScanner Engine completed successfully
+```
+
+
+
 ✅ Python code analysis will appear in the SonarQube dashboard.
 
 ![Image](https://github.com/user-attachments/assets/7cd791c0-2228-4049-8f97-921d7da8067f)
