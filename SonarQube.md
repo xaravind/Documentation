@@ -114,7 +114,7 @@ apt install npm -y
 
 ### 📥 Clone and Build Java Project  
 ```bash
-git clone https://github.com/Rahuldepp/Java-Blog.git
+git clone https://github.com/<your-java-repo>.git
 cd Java-Blog
 mvn package
 ```
