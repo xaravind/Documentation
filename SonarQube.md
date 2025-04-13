@@ -91,7 +91,7 @@ Generate a token:
 
 ![Image](https://github.com/user-attachments/assets/3d38afc9-81ca-4a56-a5c5-4ddf1a2bdbd7)
 
-In 2. choose **the package/code**
+In 2. choose **the package/code** and **copy the code**
 
 ![Image](https://github.com/user-attachments/assets/7c6e4194-2dc0-4adf-a0e6-24ed0718c1c6)
 
