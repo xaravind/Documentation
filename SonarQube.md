@@ -62,13 +62,22 @@ Reset admin Password
 
 For each language (Java / JS / Python):
 
-1. Go to **Projects** → **Create Project** ![Image](https://github.com/user-attachments/assets/d19c6015-ad88-42b8-8804-e132a7569dff)
-2. Choose **Manually**
-3. Enter:
+Go to **Projects** → **Create Project** 
+![Image](https://github.com/user-attachments/assets/d19c6015-ad88-42b8-8804-e132a7569dff)
+![Image](https://github.com/user-attachments/assets/1ba73e77-9c59-49cb-a88c-04ab34750f87)
+![Image](https://github.com/user-attachments/assets/7d8031d4-3095-45ff-b26b-febafc850d29)
+![Image](https://github.com/user-attachments/assets/3137a312-1b3f-476c-a4b2-01dc5bc07cfc)
+![Image](https://github.com/user-attachments/assets/47d82a13-4c3c-4c5f-9825-9809c4d9637c)
+![Image](https://github.com/user-attachments/assets/0d12a2ea-40b2-46ca-83ba-ccdda8e0ddf4)
+![Image](https://github.com/user-attachments/assets/3d38afc9-81ca-4a56-a5c5-4ddf1a2bdbd7)
+![Image](https://github.com/user-attachments/assets/7c6e4194-2dc0-4adf-a0e6-24ed0718c1c6)
+
+Choose **Manually** 
+ Enter:
    - Project key (e.g., `java`, `js`, or `python`)
    - Project name
-4. Select **Use global settings**, then choose **Locally**
-5. Generate a token:
+Select **Use global settings**, then choose **Locally**
+Generate a token:
    - Click **Generate** → **Continue**
 
 ---
