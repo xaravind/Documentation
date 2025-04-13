@@ -52,8 +52,9 @@ curl ifconfig.me
 ```
 
 Access SonarQube at:  
-**http://18.232.140.167:9000**  
+**http://44.202.193.53:9000**  
 Login: `admin / admin`
+Reset admin Password
 
 ---
 
