@@ -118,7 +118,7 @@ git clone https://github.com/Rahuldepp/Java-Blog.git
 cd Java-Blog
 mvn package
 ```
-![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
+
 ### 🧪 Run SonarQube Analysis  
 ```bash
 mvn clean verify sonar:sonar \
@@ -141,6 +141,7 @@ cd js_code/
 npm install
 npm install -g @sonar/scan
 ```
+![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
 
 ### 📄 Create `sonar-project.properties`
 ```bash
