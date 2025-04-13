@@ -65,10 +65,15 @@ For each language (Java / JS / Python):
 Go to **Projects** → **Create Project** 
 ![Image](https://github.com/user-attachments/assets/d19c6015-ad88-42b8-8804-e132a7569dff)
 
+choose **Local project** 
+
 ![Image](https://github.com/user-attachments/assets/1ba73e77-9c59-49cb-a88c-04ab34750f87)
+
+give **Required details** 
 
 ![Image](https://github.com/user-attachments/assets/7d8031d4-3095-45ff-b26b-febafc850d29)
 
+Select **Use global settings**, then choose **Locally**
 
 Choose **Locally** 
  Enter:
