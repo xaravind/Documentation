@@ -118,6 +118,20 @@ git clone https://github.com/Rahuldepp/Java-Blog.git
 cd Java-Blog
 mvn package
 ```
+```bash
+root@ip-172-31-26-213:~/Documentation/java_code# ll
+total 64
+drwxr-xr-x 4 root root  4096 Apr 13 09:33 ./
+drwxr-xr-x 6 root root  4096 Apr 13 09:33 ../
+-rw-r--r-- 1 root root 15759 Apr 13 09:33 MySQLDesign.mwb
+-rw-r--r-- 1 root root 15550 Apr 13 09:33 MySQLDesign.mwb.bak
+-rw-r--r-- 1 root root  4494 Apr 13 09:33 pom.xml
+-rw-r--r-- 1 root root  7262 Apr 13 09:33 readme.md
+drwxr-xr-x 3 root root  4096 Apr 13 09:33 src/
+drwxr-xr-x 7 root root  4096 Apr 13 09:33 target/
+
+```
+
 
 ### 🧪 Run SonarQube Analysis  
 ```bash
@@ -140,6 +154,19 @@ git clone https://github.com/<your-js-repo>.git
 cd js_code/
 npm install
 npm install -g @sonar/scan
+```
+```bash
+root@ip-172-31-26-213:~/Documentation/js_code# ll
+total 208
+drwxr-xr-x 4 root root   4096 Apr 13 09:33 ./
+drwxr-xr-x 6 root root   4096 Apr 13 09:33 ../
+drwxr-xr-x 3 root root   4096 Apr 13 09:33 dist/
+-rw-r--r-- 1 root root 172684 Apr 13 09:33 package-lock.json
+-rw-r--r-- 1 root root   1086 Apr 13 09:33 package.json
+-rw-r--r-- 1 root root   6041 Apr 13 09:33 readme.md
+drwxr-xr-x 4 root root   4096 Apr 13 09:33 src/
+-rw-r--r-- 1 root root    322 Apr 13 09:33 tsconfig.json
+-rw-r--r-- 1 root root   1317 Apr 13 09:33 webpack.config.js
 ```
 ![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
 
@@ -172,6 +199,17 @@ sonar-scanner
 ### 📥 Prepare and Analyze Python Project  
 ```bash
 cd python_code/
+```
+
+```bash
+
+root@ip-172-31-26-213:~/Documentation/python_code# ll
+total 20
+drwxr-xr-x 3 root root 4096 Apr 13 09:33 ./
+drwxr-xr-x 6 root root 4096 Apr 13 09:33 ../
+drwxr-xr-x 4 root root 4096 Apr 13 09:33 app/
+-rw-r--r-- 1 root root 6514 Apr 13 09:33 readme.md
+
 ```
 
 ![Image](https://github.com/user-attachments/assets/1d6028ec-03ca-4516-a4d6-e84161a72b5a)
