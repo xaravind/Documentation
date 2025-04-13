@@ -62,7 +62,7 @@ Reset admin Password
 
 For each language (Java / JS / Python):
 
-1. Go to **Projects** → **Create Project**
+1. Go to **Projects** → **Create Project** ![Image](https://github.com/user-attachments/assets/d19c6015-ad88-42b8-8804-e132a7569dff)
 2. Choose **Manually**
 3. Enter:
    - Project key (e.g., `java`, `js`, or `python`)
