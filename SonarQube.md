@@ -83,11 +83,15 @@ Choose **Locally**
 
 ![Image](https://github.com/user-attachments/assets/47d82a13-4c3c-4c5f-9825-9809c4d9637c)
 
-![Image](https://github.com/user-attachments/assets/0d12a2ea-40b2-46ca-83ba-ccdda8e0ddf4)
-Select **Use global settings**, then choose **Locally**
+
 Generate a token:
    - Click **Generate** → **Continue**
+
+![Image](https://github.com/user-attachments/assets/0d12a2ea-40b2-46ca-83ba-ccdda8e0ddf4)
+
 ![Image](https://github.com/user-attachments/assets/3d38afc9-81ca-4a56-a5c5-4ddf1a2bdbd7)
+
+In 2. choose **the package/code**
 
 ![Image](https://github.com/user-attachments/assets/7c6e4194-2dc0-4adf-a0e6-24ed0718c1c6)
 
