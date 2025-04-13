@@ -173,6 +173,8 @@ sonar-scanner
 cd python_code/
 ```
 
+![Image](https://github.com/user-attachments/assets/1d6028ec-03ca-4516-a4d6-e84161a72b5a)
+
 ### 🧪 Run SonarQube Scanner  
 ```bash
 sonar-scanner \
