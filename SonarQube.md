@@ -1,6 +1,3 @@
-Here's the updated documentation with the **JavaScript** and **Python** project SonarQube analysis steps, added in the same clear and consistent format.
-
----
 
 # 🧪 SonarQube Testing of Java, JS, and Python Code (Two-Server Setup)
 
