@@ -88,6 +88,9 @@ Generate a token:
 In 2. choose **the package/code** and **copy the code**
 
 ![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
+
+![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
+
 ---
 
 ## 🧱 3. Build Server Setup (NPM + SonarScanner)
@@ -120,7 +123,7 @@ drwxr-xr-x 4 root root   4096 Apr 13 09:33 src/
 -rw-r--r-- 1 root root    322 Apr 13 09:33 tsconfig.json
 -rw-r--r-- 1 root root   1317 Apr 13 09:33 webpack.config.js
 ```
-![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
+
 
 ### 📄 Create `sonar-project.properties`
 ```bash
