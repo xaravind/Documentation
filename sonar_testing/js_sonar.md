@@ -1,4 +1,4 @@
-# 🧪 SonarQube Testing of Java, JS, and Python Code (Two-Server Setup)
+# 🧪 SonarQube Testing of AngularJS code with Two-Server Setup
 
 ## 🧠 Goal  
 Set up **two separate servers**:  
