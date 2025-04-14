@@ -130,10 +130,63 @@ sonar-scanner \
 [INFO]  ScannerEngine: Analysis total time: 1:19.266 s
 [INFO]  ScannerEngine: SonarScanner Engine completed successfully
 ```
+### If you get below error, follow below steps
 
+```bash
+sonar-scanner : command not found
+```
 
+## 🛠️ How to Install `sonar-scanner` on Ubuntu
 
-✅ Python code analysis will appear in the SonarQube dashboard.
+###  1. Download SonarScanner
+
+```bash
+cd /opt
+sudo wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+sudo unzip sonar-scanner-cli-5.0.1.3006-linux.zip
+sudo mv sonar-scanner-5.0.1.3006-linux sonar-scanner
+```
+
+---
+
+###  2. Add to PATH
+
+Add SonarScanner to your shell’s path:
+
+```bash
+echo 'export PATH=$PATH:/opt/sonar-scanner/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+
+---
+
+###  3. Confirm Installation
+
+Run:
+
+```bash
+sonar-scanner -v
+```
+
+You should see the version output like:
+
+```
+SonarScanner 5.0.1.3006
+```
+
+---
+
+###  4. Run the Scanner in Your Project
+
+Now go to your project directory and run:
+
+```bash
+sonar-scanner
+```
+
+---
+
+✅ Python code analysis will appear in the SonarQube dashboard, once analysis is completed.
 
 ![Image](https://github.com/user-attachments/assets/c56485aa-1c96-434c-8cf0-68e4f8a183ac)
 
