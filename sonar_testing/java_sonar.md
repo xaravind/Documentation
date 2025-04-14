@@ -142,3 +142,5 @@ mvn clean verify sonar:sonar \
 ```
 
 ✅ Output will show analysis and upload to SonarQube.
+
+![Image](https://github.com/user-attachments/assets/e9f85bb2-1c55-4b45-b7c6-89e7c1c12adb)
