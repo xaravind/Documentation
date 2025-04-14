@@ -87,7 +87,6 @@ Generate a token:
 
 In 2. choose **the package/code** and **copy the code**
 
-![Image](https://github.com/user-attachments/assets/9ac205ef-08ba-4fa9-a0a5-c2250b2d4fc7)
 
 ![Image](https://github.com/user-attachments/assets/1d6028ec-03ca-4516-a4d6-e84161a72b5a)
 
@@ -112,7 +111,6 @@ drwxr-xr-x 4 root root 4096 Apr 13 09:33 app/
 
 ```
 
-![Image](https://github.com/user-attachments/assets/1d6028ec-03ca-4516-a4d6-e84161a72b5a)
 
 ### 🧪 Run SonarQube Scanner  
 ```bash
