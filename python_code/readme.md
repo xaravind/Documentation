@@ -75,6 +75,11 @@ Create a virtual environment under the ec2-user home directory
 The following command creates the app directory with the virtual environment inside of it. You can change my_app to another name.
 If you change my_app, then reference the new name in the remaining resolution steps:
 
+note: python3-venv not installed in ubuntu, imstall with below command
+```bash
+sudo apt install python3-venv
+```
+
 ```bash
 python3 -m venv myenv
 ```
