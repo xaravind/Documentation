@@ -54,9 +54,14 @@ sudo adduser nexus
 Sample Output:
 ```bash
 ubuntu@Release:/opt$ sudo adduser nexus
-info: Adding user `nexus' ...
-...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for nexus
+Enter the new value, or press ENTER for the default
 Is the information correct? [Y/n] y
+info: Adding new user `nexus' to supplemental / extra groups `users' ...
+info: Adding user `nexus' to group `users' ...
 ```
 
 ### Change Ownership of Nexus and Work Directory
@@ -69,7 +74,8 @@ Sample Output:
 ```bash
 ubuntu@Release:/opt$ ll
 total 412244
-...
+drwxr-xr-x  4 root root      4096 Apr 16 07:09 ./
+drwxr-xr-x 22 root root      4096 Apr 16 07:03 ../
 drwxr-xr-x  7 root root      4096 Apr 16 07:08 nexus/
 -rw-r--r--  1 root root 422117063 Apr 10 18:13 nexus-3.79.1-04-linux-x86_64.tar.gz
 drwxr-xr-x  3 root root      4096 Apr 10 13:56 sonatype-work/
@@ -98,7 +104,7 @@ Restart=on-abort
 WantedBy=multi-user.target
 ```
 
-### Start Nexus Server
+### Start and Enable the Nexus Server
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable nexus
@@ -126,8 +132,16 @@ Sample Output:
 ```bash
 ubuntu@Release:/opt$ curl ifconfig.me
 54.234.203.250
-...
+ubuntu@Release:/opt$ netstat -ntpl
+(No info could be read for "-p": geteuid()=1000 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.54:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:6010          0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
 tcp6       0      0 :::8081                 :::*                    LISTEN      -
+tcp6       0      0 ::1:6010                :::*                    LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      --
 ```
 
 ### Access Nexus
@@ -143,6 +157,8 @@ cat /nexus-data/admin.password
 Then reset the password in the UI.
 
 ---
+
+![Image](https://github.com/user-attachments/assets/183ffd20-9247-4add-a16e-345cf50972a2)
 
 ## Build Server Setup
 
@@ -201,5 +217,5 @@ Go to:
 Browse --> maven-releases (or your component) --> Click on version number
 ```
 
-<image>
+![Image](https://github.com/user-attachments/assets/eec2045a-c47a-49e9-899b-a8e22715bbe1)
 
