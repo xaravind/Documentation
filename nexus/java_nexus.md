@@ -219,3 +219,23 @@ Browse --> maven-releases (or your component) --> Click on version number
 
 ![Image](https://github.com/user-attachments/assets/eec2045a-c47a-49e9-899b-a8e22715bbe1)
 
+Here’s a clear and polished version of your note, suitable for inclusion in the **Nexus Setup Guide** under a new section like “### Downloading Artifacts Directly from Nexus”:
+
+---
+
+### Downloading Artifacts Directly from Nexus
+
+You can directly download a `.war` or other artifact by using the full path from the Nexus releases repository, as shown below:
+
+```bash
+wget http://54.234.203.250:8081/repository/maven-releases/ua/sergiishapoval/webcarrental/WebCarRental/1.0/WebCarRental-1.0.war
+```
+
+You can obtain the download link by navigating to the desired artifact version in the Nexus UI, then copying the path shown.
+
+![Nexus Artifact Path](https://github.com/user-attachments/assets/ad8a35bc-9a84-4035-9b74-0126b9d77f87)
+
+---
+
+
+
