@@ -212,7 +212,6 @@ drwxr-xr-x 4 root root 4096 Apr 13 09:33 app/
 
 ```
 
-![Image](https://github.com/user-attachments/assets/1d6028ec-03ca-4516-a4d6-e84161a72b5a)
 
 ### 🧪 Run SonarQube Scanner  
 ```bash
