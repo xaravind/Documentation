@@ -66,6 +66,7 @@ info: Adding user `nexus' to group `users' ...
 
 ### Change Ownership of Nexus and Work Directory
 ```bash
+sudo rm -rf nexus-3.79.1-04-linux-x86_64.tar.gz
 sudo mv nexus-* nexus
 sudo chown -R nexus:nexus /opt/nexus
 sudo chown -R nexus:nexus /opt/sonatype-work
@@ -77,9 +78,8 @@ ubuntu@Release:/opt$ ll
 total 412244
 drwxr-xr-x  4 root root      4096 Apr 16 07:09 ./
 drwxr-xr-x 22 root root      4096 Apr 16 07:03 ../
-drwxr-xr-x  7 root root      4096 Apr 16 07:08 nexus/
--rw-r--r--  1 root root 422117063 Apr 10 18:13 nexus-3.79.1-04-linux-x86_64.tar.gz
-drwxr-xr-x  3 root root      4096 Apr 10 13:56 sonatype-work/
+drwxr-xr-x  7 nexus nexus      4096 Apr 16 07:08 nexus/
+drwxr-xr-x  3 nexus nexus      4096 Apr 10 13:56 sonatype-work/
 ```
 
 ### Create Nexus Service File
