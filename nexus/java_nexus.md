@@ -188,7 +188,7 @@ Insert the following after `</dependencies>`:
 <distributionManagement>
     <repository>
         <id>repo-id</id> <!-- Repository ID, used for authentication -->
-        <url>http://<nexus-ip>:8081/repository/maven-releases/</url> <!-- Replace with your actual repository URL -->
+        <url>http://<private-nexus-ip>:8081/repository/maven-releases/</url> <!-- Replace with your actual repository URL -->
     </repository>
 </distributionManagement>
 ```
@@ -198,7 +198,7 @@ Insert the following after `</dependencies>`:
 sudo vim /etc/maven/settings.xml
 ```
 
-Paste the following under `<servers>`:
+Paste the following under `<servers>`: (uodate your repo-id, 
 ```xml
 <server>
     <id>repo-id</id>
