@@ -195,7 +195,7 @@ Insert the following after `</dependencies>`:
 
 ### Store Nexus Credentials in Maven Settings
 ```bash
-vim /etc/maven/settings.xml
+sudo vim /etc/maven/settings.xml
 ```
 
 Paste the following under `<servers>`:
