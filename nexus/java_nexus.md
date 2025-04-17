@@ -66,6 +66,7 @@ info: Adding user `nexus' to group `users' ...
 
 ### Change Ownership of Nexus and Work Directory
 ```bash
+sudo mv nexus-* nexus
 sudo chown -R nexus:nexus /opt/nexus
 sudo chown -R nexus:nexus /opt/sonatype-work
 ```
