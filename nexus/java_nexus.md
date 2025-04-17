@@ -201,7 +201,7 @@ sudo vim /etc/maven/settings.xml
 Paste the following under `<servers>`:
 ```xml
 <server>
-    <id>maven-releases</id>
+    <id>repo-id</id>
     <username>admin</username>
     <password>password</password>
 </server>
