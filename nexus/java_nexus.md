@@ -188,7 +188,7 @@ Insert the following after `</dependencies>`:
 <distributionManagement>
     <repository>
         <id>repo-id</id> <!-- Repository ID, used for authentication -->
-        <url>http://<repo-ip>:8081/repository/maven-releases/</url> <!-- Replace with your actual repository URL -->
+        <url>http://<nexus-ip>:8081/repository/maven-releases/</url> <!-- Replace with your actual repository URL -->
     </repository>
 </distributionManagement>
 ```
