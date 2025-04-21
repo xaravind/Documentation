@@ -16,7 +16,14 @@ Test static analysis using SonarQube for Java, JavaScript, and Python projects.
 uname -a
 # Linux ip-172-31-20-239 ... x86_64 GNU/Linux
 ```
+---
 
+**Note:**  
+Do **not** start SonarQube as the **root user**. Instead, use a **non-root user account** to run the application.  
+Running SonarQube as root is **not supported** and can introduce **security risks**, lead to **permission issues**, and expose the system to **potential vulnerabilities**.  
+Additionally, ensure that all SonarQube files and directories are **owned by the non-root user** to avoid access and permission errors during runtime.
+
+---
 ### 📦 Install Prerequisites  
 ```bash
 sudo apt update -y
