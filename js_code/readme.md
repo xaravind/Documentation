@@ -149,7 +149,13 @@ During the installation, you may receive warnings regarding deprecated AngularJS
    After the installation completes, verify that the Apache HTTP Server (`httpd`) is available.
 
 #### 8. **Copy Build Files to Apache Directory**
-   Copy the files from the `dist/` directory to the Apache web root directory (`/var/www/html/`):
+   Remove exsisiting index.html file
+   ```bash
+   rm -rf  /var/www/html/*
+   ```
+
+   
+   Copy  the files from the `dist/` directory to the Apache web root directory (`/var/www/html/`):
 
    ```bash
    cp -r * /var/www/html/
