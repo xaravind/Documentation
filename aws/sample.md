@@ -1,7 +1,5 @@
 #  Deploying an E-Commerce App on AWS EC2 with Load Balancer and Auto Scaling
 
-This guide walks you through provisioning EC2 infrastructure, deploying an e-commerce application, configuring a Load Balancer, and setting up Auto Scaling for high availability and scalability.
-
 ---
 
 ## 1.  Provision EC2 Infrastructure
@@ -20,6 +18,8 @@ This guide walks you through provisioning EC2 infrastructure, deploying an e-com
    * HTTP (Port 80) — Source: Anywhere (IPv4)
 5. Scroll down and click **Create security group**.
 
+![Image](https://github.com/user-attachments/assets/cfdbcec4-bc5b-4a94-b3b8-58d0808e135c)
+
 ---
 
 ## 2.  Deploy the E-Commerce Application
@@ -37,6 +37,14 @@ This guide walks you through provisioning EC2 infrastructure, deploying an e-com
    * **Security Group:** `EC2-SG`
    * **Key Pair:** Create a new key pair named `ec2`
    * Leave all other settings as default.
+   * 
+![Image](https://github.com/user-attachments/assets/76323211-402d-493b-8db5-62eaf540d69c)
+
+![Image](https://github.com/user-attachments/assets/300ce6ea-8493-4487-9c17-c39ded78399b)
+
+![Image](https://github.com/user-attachments/assets/34a9ad04-2ffd-4677-937d-cee8eb81c9c1)
+
+![Image](https://github.com/user-attachments/assets/c0027c04-b729-43c0-89d8-5f09c70052c8)
 
 ### Step 2.2: SSH into Each Instance and Deploy the App
 
@@ -60,6 +68,7 @@ Open your browser and access the app on both instances:
 http://<public-ip-of-EC2-1A>:80
 http://<public-ip-of-EC2-1B>:80
 ```
+![Image](https://github.com/user-attachments/assets/357d5614-4451-47d6-870e-5a4ebdf7e1fc)
 
 ---
 
@@ -78,6 +87,8 @@ http://<public-ip-of-EC2-1B>:80
    * **VPC:** Choose your default VPC
 4. Register both EC2 instances to the target group.
 5. Click **Create target group**.
+
+![Image](https://github.com/user-attachments/assets/8f76a630-9977-4787-944e-2a7119ca2558)
 
 ### Step 3.2: Create Application Load Balancer (ALB)
 
