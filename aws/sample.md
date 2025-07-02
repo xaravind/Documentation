@@ -185,6 +185,8 @@ http://<load-balancer-dns>:80
 10. Click **Create Auto Scaling group**.
 
 
+
+
 ![Image](https://github.com/user-attachments/assets/187757c5-bd9f-4916-8ee8-81fda8e89763)
 
 ![Image](https://github.com/user-attachments/assets/42736e84-ac36-4dc9-8fe7-0cef25f61104)
@@ -202,6 +204,39 @@ http://<load-balancer-dns>:80
 ![Image](https://github.com/user-attachments/assets/c67a1203-428c-4250-90a9-a6e8c55ae0a9)
 
 
+---
+
+## 5. 🔍 Validate Auto Scaling with Stress Testing
+
+### Step 5.1: Install Stress Tool on One EC2 Instance
+
+SSH into one of the EC2 instances in the Auto Scaling Group and run:
+
+```bash
+sudo yum install stress -y
+stress --cpu 1 --timeout 10000
+```
+
+### Step 5.2: Monitor Scaling Activity
+
+1. Go to **CloudWatch > Alarms** and observe the scaling alarms triggered by high CPU usage.
+2. The Auto Scaling group should launch additional EC2 instances based on the policy.
+3. Check:
+
+   * **New EC2 instances** in the console
+   * **Target group health status** (new instances should show as healthy)
+   * **SNS Email Notifications** for scaling activities
+
+![Image](https://github.com/user-attachments/assets/40a4d1f7-92cf-4030-9cd2-e1bfacfef622)
+
+![Image](https://github.com/user-attachments/assets/5c3834be-7011-4091-8db8-7869679f1b83)
+
+![Image](https://github.com/user-attachments/assets/bd6a9b22-a506-4594-a680-1a5a36d97ca0)
+
+![Image](https://github.com/user-attachments/assets/ad306fe7-29e9-402b-8416-028fdb93b46a)
+
+![Image](https://github.com/user-attachments/assets/08155333-3f51-4342-a341-eb9698abf1cb)
 
 ---
+
 
