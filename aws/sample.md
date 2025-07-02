@@ -68,6 +68,8 @@ http://<public-ip-of-EC2-1B>:80
 ```
 ![Image](https://github.com/user-attachments/assets/357d5614-4451-47d6-870e-5a4ebdf7e1fc)
 
+![Image](https://github.com/user-attachments/assets/ef02b9d4-8b2c-49de-98a9-a7ed1c1d26b6)
+
 ---
 
 ## 3.  Configure Load Balancer
@@ -102,13 +104,19 @@ http://<public-ip-of-EC2-1B>:80
 5. Select **Target Group:** `EC2-TG`
 6. Click **Create load balancer**.
 
+![Image](https://github.com/user-attachments/assets/41e7250f-2813-4d5d-b532-4c7b7ffc283c)
+
 ### Step 3.3: Test Load Balancer
 
 After provisioning status becomes **Active**, access the application using the DNS of the ALB:
 
+![Image](https://github.com/user-attachments/assets/2f559cb0-4821-49bd-83db-7ac945a31788)
+
 ```
 http://<load-balancer-dns>:80
 ```
+
+![Image](https://github.com/user-attachments/assets/6257b8e1-61cb-4aea-b83f-0e62df27448e)
 
 ---
 
@@ -127,6 +135,9 @@ http://<load-balancer-dns>:80
 ### Step 4.2: Create a Launch Template
 
 1. Navigate to **EC2 > Launch Templates > Create launch template**.
+
+![Image](https://github.com/user-attachments/assets/18a7fc4f-1e2c-4f49-8b05-4864fda65cc2)
+
 2. Set:
 
    * **Template name:** `EC2-LTEMP`
@@ -136,9 +147,16 @@ http://<load-balancer-dns>:80
    * **Security Group:** `EC2-SG`
 3. Click **Create launch template**.
 
+![Image](https://github.com/user-attachments/assets/dd323e1c-1225-4285-986e-75d76d02d5e6)
+
+![Image](https://github.com/user-attachments/assets/e70d3fb2-995a-43e6-b1e7-1862068afe42)
+
 ### Step 4.3: Create Auto Scaling Group
 
 1. Go to **EC2 > Auto Scaling Groups > Create Auto Scaling group**.
+
+![Image](https://github.com/user-attachments/assets/a1023d55-d837-4f72-b6e1-9ea0e1b4e835)
+
 2. Name it: `EC2-ASG`.
 3. Select **Launch Template:** `EC2-LTEMP`.
 4. Select **Availability Zones:** `us-east-1a` and `us-east-1b`.
@@ -146,6 +164,9 @@ http://<load-balancer-dns>:80
 
    * Choose the **Application Load Balancer**
    * Select the target group: `EC2-TG`
+
+![Image](https://github.com/user-attachments/assets/5a05acda-ac0d-44ad-96e7-afdf29a3a12a)  
+
 6. Configure the group size:
 
    * **Minimum capacity:** 2 instances
@@ -163,6 +184,11 @@ http://<load-balancer-dns>:80
    * Provide your email to receive alerts
 10. Click **Create Auto Scaling group**.
 
+
+![Image](https://github.com/user-attachments/assets/187757c5-bd9f-4916-8ee8-81fda8e89763)
+
+![Image](https://github.com/user-attachments/assets/42736e84-ac36-4dc9-8fe7-0cef25f61104)
+
 ---
 
 ## 5. 🧪 Validation
@@ -170,6 +196,12 @@ http://<load-balancer-dns>:80
 * Go to **EC2 > Instances** and verify new instances are created by Auto Scaling.
 * Check **Target Group > Targets** for healthy status of the newly added instances.
 * Confirm the application is accessible through the **Load Balancer DNS name**.
+
+![Image](https://github.com/user-attachments/assets/c974b3cc-dac1-414b-b019-85f6cb11e3a4)
+
+![Image](https://github.com/user-attachments/assets/c67a1203-428c-4250-90a9-a6e8c55ae0a9)
+
+
 
 ---
 
