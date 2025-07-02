@@ -42,8 +42,6 @@
 
 ![Image](https://github.com/user-attachments/assets/300ce6ea-8493-4487-9c17-c39ded78399b)
 
-![Image](https://github.com/user-attachments/assets/34a9ad04-2ffd-4677-937d-cee8eb81c9c1)
-
 ![Image](https://github.com/user-attachments/assets/c0027c04-b729-43c0-89d8-5f09c70052c8)
 
 ### Step 2.2: SSH into Each Instance and Deploy the App
