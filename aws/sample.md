@@ -182,9 +182,13 @@ http://<load-balancer-dns>:80
 
    * Create an SNS topic (e.g., `EC2-SNS`)
    * Provide your email to receive alerts
+   * you will recieve a  confirmation mail and accept it
+
+![Image](https://github.com/user-attachments/assets/fe317821-d3ea-445b-870a-16769f729aa5)
+
+![Image](https://github.com/user-attachments/assets/32753e15-1ac5-49d7-9018-c8879deef9d0)
+
 10. Click **Create Auto Scaling group**.
-
-
 
 
 ![Image](https://github.com/user-attachments/assets/187757c5-bd9f-4916-8ee8-81fda8e89763)
@@ -235,7 +239,11 @@ stress --cpu 1 --timeout 10000
 
 ![Image](https://github.com/user-attachments/assets/ad306fe7-29e9-402b-8416-028fdb93b46a)
 
-![Image](https://github.com/user-attachments/assets/08155333-3f51-4342-a341-eb9698abf1cb)
+**SNS Email Notifications** will sent emails based on triggers like below when ever a new instance created or instance detailed
+
+![Image](https://github.com/user-attachments/assets/23df4572-a614-4740-b1ba-fbad857d4823)
+
+![Image](https://github.com/user-attachments/assets/52e2118d-709a-4b45-8db6-c66adbd927c9)
 
 ---
 
