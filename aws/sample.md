@@ -1,10 +1,33 @@
 #  Deploying an E-Commerce App on AWS EC2 with Load Balancer and Auto Scaling
 
+## Real-Time Use Case
+In a real-world scenario, online shopping platforms (like Amazon, Flipkart, or Shopify stores) must remain available, responsive, and scalable during peak sales, festive seasons, or flash deals. This project simulates such a setup by hosting a basic e-commerce web app on AWS using EC2 instances, distributing user traffic via an Application Load Balancer (ALB), and automatically scaling infrastructure based on CPU load using Auto Scaling. It ensures high availability, fault tolerance, and cost efficiency — just like in production-grade cloud environments.
+
+## 📋 Agenda
+
+1. Provision EC2 Security Group
+2. Launch EC2 Instances and Deploy the App
+3. Set Up Application Load Balancer (ALB)
+4. Configure Auto Scaling with Launch Template
+5. Validate Setup and Trigger Auto Scaling with Stress Test
+
+##  AWS Services Used
+
+* **EC2** – Virtual servers to host the application
+* **Security Group** – Firewall to allow traffic
+* **Application Load Balancer** – Distributes incoming traffic to multiple instances
+* **Target Group** – Manages routing to EC2s registered in the load balancer
+* **Launch Template** – Blueprint for launching EC2s with consistent settings
+* **AMI (Amazon Machine Image)** – Snapshot of a configured EC2 instance
+* **Auto Scaling Group** – Dynamically scales the number of EC2s based on load
+* **CloudWatch** – Monitors resources and triggers alarms
+* **SNS (Simple Notification Service)** – Sends alerts via email for scaling events
+
 ---
 
 ## 1.  Provision EC2 Infrastructure
 
-### Step 1.1: Create a Security Group
+###  Create a Security Group
 
 1. Navigate to **EC2 > Security Groups**.
 2. Click **Create security group**.
@@ -24,7 +47,7 @@
 
 ## 2.  Deploy the E-Commerce Application
 
-### Step 2.1: Launch EC2 Instances
+###  Launch EC2 Instances
 
 1. Navigate to **EC2 > Instances > Launch Instances**.
 2. Create **two instances** named:
@@ -44,7 +67,7 @@
 
 ![Image](https://github.com/user-attachments/assets/c0027c04-b729-43c0-89d8-5f09c70052c8)
 
-### Step 2.2: SSH into Each Instance and Deploy the App
+###  SSH into Each Instance and Deploy the App
 
 Run the following commands on both instances:
 
@@ -58,7 +81,7 @@ sudo rm -rf /var/www/html/*
 sudo cp -r ecomm/* /var/www/html
 ```
 
-### Step 2.3: Access the Application
+###  Access the Application
 
 Open your browser and access the app on both instances:
 
@@ -74,7 +97,7 @@ http://<public-ip-of-EC2-1B>:80
 
 ## 3.  Configure Load Balancer
 
-### Step 3.1: Create Target Group
+###  Create Target Group
 
 1. Go to **EC2 > Target Groups**.
 2. Click **Create target group**.
@@ -90,7 +113,7 @@ http://<public-ip-of-EC2-1B>:80
 
 ![Image](https://github.com/user-attachments/assets/8f76a630-9977-4787-944e-2a7119ca2558)
 
-### Step 3.2: Create Application Load Balancer (ALB)
+### Create Application Load Balancer (ALB)
 
 1. Navigate to **EC2 > Load Balancers > Create Load Balancer**.
 2. Choose **Application Load Balancer**.
@@ -106,7 +129,7 @@ http://<public-ip-of-EC2-1B>:80
 
 ![Image](https://github.com/user-attachments/assets/41e7250f-2813-4d5d-b532-4c7b7ffc283c)
 
-### Step 3.3: Test Load Balancer
+###  Test Load Balancer
 
 After provisioning status becomes **Active**, access the application using the DNS of the ALB:
 
@@ -122,7 +145,7 @@ http://<load-balancer-dns>:80
 
 ## 4.  Set Up Auto Scaling
 
-### Step 4.1: Create an AMI from Existing Instance
+###  Create an AMI from Existing Instance
 
 1. Go to **EC2 > Instances**.
 2. Select one of the deployed instances.
@@ -132,7 +155,7 @@ http://<load-balancer-dns>:80
 6. Click **Create image**.
 7. Monitor the status under **EC2 > AMIs** until it shows **Available**.
 
-### Step 4.2: Create a Launch Template
+###  Create a Launch Template
 
 1. Navigate to **EC2 > Launch Templates > Create launch template**.
 
@@ -151,7 +174,7 @@ http://<load-balancer-dns>:80
 
 ![Image](https://github.com/user-attachments/assets/e70d3fb2-995a-43e6-b1e7-1862068afe42)
 
-### Step 4.3: Create Auto Scaling Group
+###  Create Auto Scaling Group
 
 1. Go to **EC2 > Auto Scaling Groups > Create Auto Scaling group**.
 
@@ -197,7 +220,7 @@ http://<load-balancer-dns>:80
 
 ---
 
-## 5. 🧪 Validation
+## 5.  Validation
 
 * Go to **EC2 > Instances** and verify new instances are created by Auto Scaling.
 * Check **Target Group > Targets** for healthy status of the newly added instances.
@@ -210,9 +233,9 @@ http://<load-balancer-dns>:80
 
 ---
 
-## 5. 🔍 Validate Auto Scaling with Stress Testing
+## 6.  Validate Auto Scaling with Stress Testing
 
-### Step 5.1: Install Stress Tool on One EC2 Instance
+###  Install Stress Tool on One EC2 Instance
 
 SSH into one of the EC2 instances in the Auto Scaling Group and run:
 
@@ -221,7 +244,7 @@ sudo yum install stress -y
 stress --cpu 1 --timeout 10000
 ```
 
-### Step 5.2: Monitor Scaling Activity
+###  Monitor Scaling Activity
 
 1. Go to **CloudWatch > Alarms** and observe the scaling alarms triggered by high CPU usage.
 2. The Auto Scaling group should launch additional EC2 instances based on the policy.
@@ -239,7 +262,7 @@ stress --cpu 1 --timeout 10000
 
 ![Image](https://github.com/user-attachments/assets/ad306fe7-29e9-402b-8416-028fdb93b46a)
 
-**SNS Email Notifications** will sent emails based on triggers like below when ever a new instance created or instance detailed
+**SNS Email Notifications** will send emails based on triggers like below whenever a new instance is created or terminated.
 
 ![Image](https://github.com/user-attachments/assets/23df4572-a614-4740-b1ba-fbad857d4823)
 
