@@ -4,7 +4,7 @@
 
 In a real-world scenario, online shopping platforms (like Amazon, Flipkart, or Shopify stores) must remain available, responsive, and scalable during peak sales, festive seasons, or flash deals. This project simulates such a setup by hosting a basic e-commerce web app on AWS using EC2 instances, distributing user traffic via an Application Load Balancer (ALB), and automatically scaling infrastructure based on CPU load using Auto Scaling. It ensures high availability, fault tolerance, and cost efficiency — just like in production-grade cloud environments.
 
-## 📋 Agenda
+##  Agenda
 
 1. Provision EC2 Security Group
 2. Launch EC2 Instances and Deploy the App
