@@ -84,7 +84,7 @@ sudo yum update -y
 sudo yum install git httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
-sudo git clone https://github.com/Ai-TechNov/ecomm.git
+sudo git clone https://github.com/<git-repo>.git
 sudo rm -rf /var/www/html/*
 sudo cp -r ecomm/* /var/www/html
 ```
